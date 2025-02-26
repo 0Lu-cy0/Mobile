@@ -5,7 +5,7 @@ import styles from './styles/createNewProject'; // Path to your styles file
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MyInputField from '@/components/inputButton';
 
-const createNewProject = () => {
+const CreateNewProject = () => {
     const [taskName, setTaskName] = React.useState('');
     return (
         <SafeAreaView style={styles.container}>
@@ -21,4 +21,4 @@ const createNewProject = () => {
     );
 };
 
-export default createNewProject;
+export default CreateNewProject;

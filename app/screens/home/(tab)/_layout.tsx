@@ -4,7 +4,7 @@ import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import homeScreen from './index';
 import messagesScreen from './messages';
-import createNewProject from './createNewProject';
+import CreateNewProject from './createNewProject';
 import notificationScreen from './notification';
 import scheduleScreen from './schedule';
 import reponsive from '@/components/reponsive';
@@ -148,7 +148,7 @@ const TabRoot = () => {
         }}
       />
       <Tab.Screen name="Messages" component={messagesScreen} />
-      <Tab.Screen name="Create New Project" component={createNewProject} options={{ tabBarLabel: () => null, tabBarStyle: { display: 'none' } }} />
+      <Tab.Screen name="Create New Project" component={CreateNewProject} options={{ tabBarLabel: () => null, tabBarStyle: { display: 'none' } }} />
       <Tab.Screen name="Notifications" component={notificationScreen} />
       <Tab.Screen name="Schedule" component={scheduleScreen} />
     </Tab.Navigator>
