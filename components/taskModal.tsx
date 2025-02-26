@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
         right: responsive.normalizeX(16),
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'red'
     },
     closeText: {
         fontSize: 18,

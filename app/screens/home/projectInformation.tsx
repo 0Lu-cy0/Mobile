@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { View, Image, Pressable } from 'react-native';
 import CustomText from '@/components/customText';
-import styles from './styles/createNewProject';
+import styles from '@/app/screens/home/(tab)/styles/projectInformation';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MyInputField from '@/components/inputButton';
 import MyButton from '@/components/myButton';
 import AddTeamMemberFlashList from '@/components/addTeamMemberFlashList';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import Head from '@/components/head';
+import { router } from 'expo-router';
 
-const CreateNewProject: React.FC = () => {
+const ProjectInformation: React.FC = () => {
     const [taskName, setTaskName] = useState('');
     const [description, setDescription] = useState('');
     const [dueTime, setDueTime] = useState(new Date()); // Thời gian deadline
@@ -44,8 +46,18 @@ const CreateNewProject: React.FC = () => {
         return date.toLocaleDateString();
     };
 
+    const handleGoBack = () => {
+        router.back(); // Điều hướng quay lại trang trước đó
+    };
+
     return (
         <SafeAreaView style={styles.container}>
+            <Head
+                onLeftPress={handleGoBack} // Hàm xử lý quay lại
+                showRightIcon={false}
+            >
+                <CustomText style={[{ fontFamily: 'Inter' }, styles.headTitle]}>Project Information</CustomText>
+            </Head>
             <CustomText fontFamily='InterSemiBold' style={styles.title1}>Project Title</CustomText>
             <MyInputField
                 style={styles.input1}
@@ -99,12 +111,19 @@ const CreateNewProject: React.FC = () => {
                     </View>
                 </View>
             </View>
-            <MyButton
-                style={styles.createBox}
-                onPress={() => console.log("Create Button Pressed!")}
-                title={<CustomText fontFamily="InterSemiBold" fontSize={18} style={{ color: '#000000' }}>Create</CustomText>}
-            />
-
+            <View style={styles.deleteChange}>
+                <MyButton
+                    onPress={() => console.log("Create Button Pressed!")}
+                    title={<CustomText fontFamily="InterMedium" fontSize={18} style={{ color: '#FFFFFF' }}>Delete</CustomText>}
+                    style={styles.Delete}
+                    backgroundColor='#455A64'
+                />
+                <MyButton
+                    onPress={() => console.log("Create Button Pressed!")}
+                    title={<CustomText fontFamily="InterMedium" fontSize={18} style={{ color: '#000' }}>Change</CustomText>}
+                    style={styles.Change}
+                />
+            </View>
             {/* Hiển thị DateTimePicker */}
             {showTimePicker && (
                 <DateTimePicker
@@ -126,4 +145,4 @@ const CreateNewProject: React.FC = () => {
     );
 };
 
-export default CreateNewProject;
+export default ProjectInformation;

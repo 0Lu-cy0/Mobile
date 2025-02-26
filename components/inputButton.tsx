@@ -17,6 +17,9 @@ interface MyInputFieldProps {
     secureTextEntry?: boolean;
     placeholder?: string;
     placeholderStyle?: TextStyle;
+    multiline?: boolean;
+    scrollEnabled?: boolean;
+    textAlignVertical?: "auto" | "top" | "bottom" | "center";
 }
 
 const MyInputField: React.FC<MyInputFieldProps> = ({
@@ -31,6 +34,9 @@ const MyInputField: React.FC<MyInputFieldProps> = ({
     secureTextEntry,
     placeholder = "Enter text...",
     placeholderStyle,
+    multiline,
+    scrollEnabled,
+    textAlignVertical,
 }) => {
     const [fontLoaded, setFontLoaded] = useState(false);
 
@@ -61,6 +67,9 @@ const MyInputField: React.FC<MyInputFieldProps> = ({
                     onChangeText={onChangeText}
                     style={[styles.input, { fontFamily: 'InterReguler' }, textStyle]}
                     secureTextEntry={secureTextEntry}
+                    multiline={multiline}
+                    scrollEnabled={scrollEnabled}
+                    textAlignVertical={textAlignVertical}
                 />
             </View>
 

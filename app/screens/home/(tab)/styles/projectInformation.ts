@@ -6,7 +6,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#212832',
     },
+    headTitle: {
+        fontSize: 20,
+        color: '#fff',
+    },
     title1: {
+        marginTop: reponsive.normalizeY(53), // Đẩy nội dung xuống dưới Head
         fontSize: 20,
         color: '#fff',
         marginLeft: reponsive.normalizeX(41),
@@ -101,11 +106,22 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
-    createBox: {
-        marginTop: reponsive.normalizeY(63),
+    deleteChange: {
+        marginTop: reponsive.normalizeY(70),
         marginLeft: reponsive.normalizeX(41),
         marginRight: reponsive.normalizeX(29),
-        height: reponsive.normalizeY(67),
-    }
+        height: reponsive.normalizeY(48),
+        flexDirection: 'row',
+
+    },
+    Delete: {
+        width: reponsive.normalizeWidth(176),
+        height: '100%',
+        marginRight: reponsive.normalizeX(6)
+    },
+    Change: {
+        width: reponsive.normalizeWidth(176),
+        height: '100%',
+    },
 });
 export default styles;

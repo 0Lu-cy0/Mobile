@@ -8,23 +8,25 @@ interface HeadProps {
     rightIconUrl?: string;
     onLeftPress?: () => void;
     onRightPress?: () => void;
-    children: React.ReactNode; // Accept custom text or component as children
+    children: React.ReactNode;
+    showRightIcon?: boolean;
 }
 
 const Head: React.FC<HeadProps> = ({
-    leftIconUrl = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/73bab2b3-7af2-4c18-8925-df3a35fd3758', // Default left icon URL
-    rightIconUrl = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aab647bb-3d80-4f84-ae50-8dfcd9de6a7b', // Default right icon URL
+    leftIconUrl = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/73bab2b3-7af2-4c18-8925-df3a35fd3758',
+    rightIconUrl = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aab647bb-3d80-4f84-ae50-8dfcd9de6a7b',
     onLeftPress,
     onRightPress,
-    children
+    children,
+    showRightIcon = true,
 }) => {
     const navigation = useNavigation();
 
     const handleLeftPress = () => {
         if (onLeftPress) {
-            onLeftPress(); // Call the function passed in
+            onLeftPress();
         } else {
-            navigation.goBack(); // Go back if no function passed
+            navigation.goBack();
         }
     };
 
@@ -43,7 +45,7 @@ const Head: React.FC<HeadProps> = ({
             </View>
 
             {/* Right Icon */}
-            {rightIconUrl && (
+            {showRightIcon && rightIconUrl && (
                 <TouchableOpacity style={styles.rightIcon} onPress={onRightPress}>
                     <Image source={{ uri: rightIconUrl }} style={styles.iconImage} />
                 </TouchableOpacity>

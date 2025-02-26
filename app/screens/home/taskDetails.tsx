@@ -174,7 +174,7 @@ const TaskDetails: React.FC = () => {
         <View style={styles.container}>
             <Head
                 onLeftPress={handleGoBack} // Hàm xử lý quay lại
-                onRightPress={handleSaveTask} // Hàm xử lý thêm mới
+                onRightPress={() => router.push('./projectInformation')} // Hàm xử lý thêm mới
             >
                 <CustomText style={[{ fontFamily: 'Inter' }, styles.headTitle]}>Task Details</CustomText>
             </Head>
