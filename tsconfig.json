@@ -1,17 +1,22 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react",
     "strict": true,
     "paths": {
-      "@/*": [
-        "./*"
-      ]
-    }
+      "@/*": ["./*"]
+    },
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "moduleResolution": "node"
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "expo-env.d.ts",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+    "services/dataTask.js"
+  ],
+  "exclude": ["node_modules", "build"]
 }

@@ -1,0 +1,4 @@
+Những lưu ý cần sửa lại :
+- Khi ấn vào add task không phải là sang bên trang create new task mà là tạo 1 ô task mới. Mà khi ấn vào, nó sẽ hiện ra 1 ô input đè lên toàn bộ màn hình. Màn hình phía sau sẽ được làm mờ. Sẽ có 2 nút là save và cancel. Khi ấn vào save thì ô input sẽ biến mất, màn hình sẽ trở lại, và ô task mới sẽ được thêm vào danh sách. Khi ấn vào cancel thì ô input sẽ biến mất, toàn bộ những gì vừa nhập cũg sẽ biến mất cùng. Bên dưới là ô time & date giống bên trang create new task. Khi tạo mới, task sẽ mặc định là chưa hoàn thành. Cụ thể sẽ được miêu tả như hình add task
+
+-Phần trăm hoàn thành của task sẽ được tính dựa trên số task hoàn thành. Chương trình sẽ tự động phân loại những task nào đã hoàn thành, những task nào chưa hoàn thành. Đã hoàn thành sẽ được hiển thị lên hàng bên trên, chưa hoàn thành sẽ được hiển thị ở danh sách bên dưới

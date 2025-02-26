@@ -1,0 +1,14 @@
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCZiEdppNTn9KhP7cWwrEMRPANxIatvu9o",
+    authDomain: "daytasktest.firebaseapp.com",
+    projectId: "daytasktest",
+    storageBucket: "daytasktest.firebasestorage.app",
+    messagingSenderId: "204263812462",
+    appId: "1:204263812462:web:e4f6272890b606657fa57f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);

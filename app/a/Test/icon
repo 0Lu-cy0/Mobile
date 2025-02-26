@@ -1,0 +1,59 @@
+//Home Screen
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1ab553fe-9ea6-4310-9f20-a52edc715356" -- Search
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/29d5bfb0-2b66-4e13-84c3-b9d2014ebb74" -- Search Filter
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/02fc7268-4510-4296-880b-8fcb1f25818a" -- Home selected
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/83441d8f-afac-451a-a2b5-d9d16cb5a3db" -- Chat
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e2e98082-960a-4970-bb96-0b5b27337190" -- Add Task
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cb345231-db03-4353-a6b5-b5e9a57c8e51" -- Calendar
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/56ce408b-e5e3-45fa-bdfa-146764e600cf" -- Notification
+
+
+//Task Detail
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/73bab2b3-7af2-4c18-8925-df3a35fd3758" -- BackButton
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aab647bb-3d80-4f84-ae50-8dfcd9de6a7b" -- AddNew
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3b81ac77-79c7-49c3-88db-5758394b8f30" -- Calendar in Task Detail
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c5881b13-0fbc-44e5-a12f-a9c111c25a1f" -- Group
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/821e1450-bd52-4d89-8ba1-a77d5137fcbc" -- Circle has product
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8a9772be-257c-46a8-bcd9-2015ab0f44ff" -- Circle has no product
+
+
+
+//Messages
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f67b00b5-c606-4cc4-8047-f79198feca68" -- Has new messages
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f2d115b5-0641-4d9f-9dd9-7b970e63e509" -- Home no selected
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4a0519b6-d83d-4816-83db-e3d98a0e5ba9" -- Chat selected
+
+
+//Chat
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3b7cd9d6-c809-424a-a5b0-07441a4be908" -- Video call
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9a61778c-b377-49c6-be80-4dcd66758019" -- Call with out video
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/7ccb9928-cf75-4c26-b9e5-bbc93a6d5278" -- Options
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/904290df-9ef4-4c37-aaa8-4f8fcabb2a59" -- Seen messages
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c873c26f-78a0-43fa-8654-9f9c86551e77" -- Voice
+
+
+//Schedule
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/929d193f-258d-4264-afa9-f7c94018fe2e" -- Add Task
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0f10e080-bb23-4141-9937-c6710a7633f9" -- Calendar selected
+
+
+//Create New Task
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4a410a5-9ee6-4736-941a-f55b91194187" -- Delete
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/98f481d7-a3c9-43ad-bea6-4e6c9512925e" -- Clock
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c89994dc-77ab-4dfb-a2c7-db39b0b35d73" -- Calendar in Create New Task
+
+
+//Notification
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f724cb06-2ae9-446a-bf98-5f113e10c8d9" -- Notification selected
+
+
+//Profile
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/23d6b1d5-6b0a-4032-aafe-4ba764164960" -- Name
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a50d0586-04b1-470d-8f08-da7911caa212" -- Fix
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5b3ef9b8-500f-4dd3-aa82-49d3037f7372" -- Email
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1fbc6300-b149-4a44-af16-aa17855e1f4c" -- Password
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/6ffca3a0-a4fa-4602-8ab9-3a1638ab1201" -- My Task
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5d7e265c-b7ad-445a-8d6a-614e5b031281" -- Show more
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f6191146-6d60-4a10-bd12-8e37f5e2fac7" -- Privacy
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/967f56bf-e07d-410e-97cc-3cf126ff6d59" -- Setting
+"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e4054692-c1a6-402f-b5bd-c2d2a9c8bd85" -- Logout
