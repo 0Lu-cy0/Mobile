@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         color: '#fff',
     },
     title1: {
-        marginTop: reponsive.normalizeY(53), // Đẩy nội dung xuống dưới Head
+        marginTop: reponsive.normalizeY(105), // Đẩy nội dung xuống dưới Head
         fontSize: 20,
         color: '#fff',
         marginLeft: reponsive.normalizeX(41),

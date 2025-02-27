@@ -21,3 +21,9 @@ teamMember: 5
 Nút add team member, khi ấn sẽ tạo ra 1 modal, ở đó hiển thị ra 1 flashList tất cả các tên và email của người dùng. Nó trông sẽ tương tự như ảnh "thêm nhóm zalo" mà tôi để ở trong folder Image. 
 
 Tách các Flash List ra thành các component
+
+Ở trang Schedule, sẽ hiển thị theo thứ tự sau: 
+- Dấu + ở trên góc màn hình bên trái sẽ là nút để chọn tháng.
+- Tháng
+- Tất cả ngày trong tháng kèm thứ trong tuần của hôm đấy 
+- Tất cả task trong ngày được sắp xếp theo thứ tự thời gian tăng dần 

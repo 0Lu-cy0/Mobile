@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { View, TouchableOpacity, StyleSheet, Image, Pressable } from 'react-native';
+import { useRouter } from 'expo-router';
 import homeScreen from './index';
 import messagesScreen from './messages';
 import CreateNewProject from './createNewProject';
@@ -32,24 +32,27 @@ const CustomHeaderLeft = () => {
 };
 
 const CustomHeaderRight = ({ routeName }: { routeName: string }) => {
+  const router = useRouter();
   let iconUri = '';
+  let onPressHandler = () => { }; // Mặc định không có handler
 
   if (routeName === 'Messages') {
     iconUri = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aab647bb-3d80-4f84-ae50-8dfcd9de6a7b';
+    onPressHandler = () => router.push('../newMessage'); // Chuyển đến trang newMessage
   } else if (routeName === 'Schedule') {
     iconUri = 'https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/929d193f-258d-4264-afa9-f7c94018fe2e';
   }
 
   return (
-    <TouchableOpacity style={styles.headerRight}>
-      {iconUri ? (
-        <Image source={{ uri: iconUri }} style={{ width: 24, height: 24 }} />
-      ) : null}
+    <TouchableOpacity style={styles.headerRight} onPress={onPressHandler}>
+      {iconUri ? <Image source={{ uri: iconUri }} style={{ width: 24, height: 24 }} /> : null}
     </TouchableOpacity>
   );
 };
 
+
 const TabRoot = () => {
+  const router = useRouter();
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -138,11 +141,11 @@ const TabRoot = () => {
               >
                 Fazil Laghari
               </CustomText>
-              <View style={stylesHome.headerRight}>
+              <Pressable style={stylesHome.headerRight} onPress={() => router.push('../profile')}>
                 <Image
                   source={require('@/Image/Ellipse 36.png')}
                 />
-              </View>
+              </Pressable>
             </View>
           ),
         }}

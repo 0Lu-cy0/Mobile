@@ -57,7 +57,7 @@ const Head: React.FC<HeadProps> = ({
 const styles = StyleSheet.create({
     container: {
         position: 'absolute',
-        top: 0,
+        top: 5.5,
         left: 0,
         right: 0,
         height: 63,
