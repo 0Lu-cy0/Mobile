@@ -3,27 +3,29 @@ import responsive from "@/components/reponsive";
 const { width } = Dimensions.get('window'); // Lấy chiều rộng màn hình
 
 const styles = StyleSheet.create({
+    tabContainer: {
+        width: '100%',
+        height: responsive.normalizeHeight(47),
+        flexDirection: 'row',
+        marginTop: responsive.normalizeY(26),
+    },
     chatButton: {
-        left: responsive.normalizeX(29),
-        top: responsive.normalizeY(26),
-        width: responsive.normalizeX(175),
-        height: responsive.normalizeY(47),
+        marginLeft: responsive.normalizeX(29),//29
+        width: responsive.normalizeWidth(175),//175
+        height: responsive.normalizeHeight(47),//47
         justifyContent: 'center',
         alignItems: 'center',
     },
     groupsButton: {
-        position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        left: responsive.normalizeX(224),
-        top: responsive.normalizeY(26),
-        width: responsive.normalizeX(175),
-        height: responsive.normalizeY(47),
+        marginLeft: responsive.normalizeX(20),//29
+        width: responsive.normalizeWidth(175),//175
+        height: responsive.normalizeHeight(47),//47
     },
     highlightTab: {
         position: 'absolute',
-        top: responsive.normalizeY(26),
-        width: responsive.normalizeX(175),
+        width: responsive.normalizeX(175),//175
         height: responsive.normalizeY(47),
         backgroundColor: '#FED36A',
     },

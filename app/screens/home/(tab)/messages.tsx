@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, Pressable, Animated, Dimensions } from 'react-native';
+import { View, Text, Pressable, Animated, Dimensions, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import CustomText from '@/components/customText';
 import styles from './styles/messages';
@@ -40,12 +40,12 @@ export default function MessagesScreen() {
             Animated.parallel([
                 Animated.timing(translateX, {
                     toValue: isChat ? responsive.normalizeX(29) : responsive.normalizeX(224),
-                    duration: 250, // Giảm thời gian animation để nhanh hơn
+                    duration: 5000, // Giảm thời gian animation để nhanh hơn
                     useNativeDriver: true,
                 }),
                 Animated.timing(boxTranslateX, {
                     toValue: isChat ? 0 : -width,
-                    duration: 250, // Đồng bộ thời gian với thanh trượt
+                    duration: 5000, // Đồng bộ thời gian với thanh trượt
                     useNativeDriver: true,
                 }),
             ]).start(() => {
@@ -80,32 +80,36 @@ export default function MessagesScreen() {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#212832' }}>
             {/* Thanh chọn tab */}
-            <View>
+            <View style={styles.tabContainer}>
+                {/* Đưa highlightTab vào đúng vị trí, phía sau chữ nhưng trên nền tab */}
                 <Animated.View
                     style={[
                         styles.highlightTab,
                         { transform: [{ translateX }] },
                     ]}
                 />
+
+                {/* Nút Chat */}
                 <Pressable
                     style={styles.chatButton}
                     onPress={() => switchTab('chat')}
-                    disabled={isAnimating} // Tắt sự kiện nhấn khi đang chạy animation
                 >
                     <CustomText fontFamily="InterMedium" fontSize={14} style={selected === 'chat' ? { color: 'black' } : { color: 'white' }}>
                         Chat
                     </CustomText>
                 </Pressable>
+
+                {/* Nút Groups */}
                 <Pressable
                     style={styles.groupsButton}
                     onPress={() => switchTab('groups')}
-                    disabled={isAnimating} // Tắt sự kiện nhấn khi đang chạy animation
                 >
                     <CustomText fontFamily="InterMedium" fontSize={14} style={selected === 'groups' ? { color: 'black' } : { color: 'white' }}>
                         Groups
                     </CustomText>
                 </Pressable>
             </View>
+
 
             {/* Nội dung chat & group */}
             <Animated.View style={{ flexDirection: 'row', width: width * 2, transform: [{ translateX: boxTranslateX }] }}>
