@@ -87,7 +87,7 @@ const editTaskInFirebase = async (type, projectId, taskId, updatedTask) => {
 //Hàm xoá dữ liệu task
 const deleteTaskFromFirebase = async (type, projectId, taskId) => {
     try {
-        if (!["completed", "onGoing"].includes(type)) {
+        if (!["completed", "ongoingProjects"].includes(type)) {
             throw new Error("❌ Invalid type. Use 'completed' or 'onGoing'.");
         }
 

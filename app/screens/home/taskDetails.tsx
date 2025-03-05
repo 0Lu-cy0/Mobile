@@ -64,7 +64,6 @@ const TaskDetails: React.FC = () => {
             if (unsubscribe) unsubscribe(); // Dọn dẹp listener khi component unmount
         };
     }, [type, processID]);
-
     const handleSaveTask = async () => {
         if (!nameTask.trim()) {
             alert("Tên task không được để trống!");
@@ -79,14 +78,12 @@ const TaskDetails: React.FC = () => {
             console.error("❌ Lỗi khi thêm task:", error);
         }
     };
-
     // Xử lý cập nhật task
     const handleChangeTask = async () => {
         if (!selectedTask || !nameTask.trim()) {
             alert("Vui lòng chọn một task và nhập tên hợp lệ!");
             return;
         }
-
         try {
             await editTaskInFirebase(type, processID, selectedTask.id, {
                 name: nameTask,
@@ -101,14 +98,12 @@ const TaskDetails: React.FC = () => {
             console.error("❌ Lỗi khi cập nhật task:", error);
         }
     };
-
     // Xử lý xoá task
     const handleDeleteTask = async () => {
         if (!selectedTask) {
             alert("Vui lòng chọn một task để xoá!");
             return;
         }
-
         try {
             await deleteTaskFromFirebase(type, processID, selectedTask.id);
             console.log(`✅ Task ID ${selectedTask.id} đã bị xoá!`);
@@ -117,28 +112,23 @@ const TaskDetails: React.FC = () => {
             console.error("❌ Lỗi khi xoá task:", error);
         }
     };
-
     const onChangeDate = (event: any, selectedDate?: Date) => {
         setShowDatePicker(false);
         if (selectedDate) setDueDateTask(selectedDate);
     };
-
     const onChangeTime = (event: any, selectedTime?: Date) => {
         setShowTimePicker(false);
         if (selectedTime) setDueTimeTask(selectedTime);
     };
-
     // Hàm xử lý khi nhấn nút "Quay lại"
     const handleGoBack = () => {
         router.back(); // Điều hướng quay lại trang trước đó
     };
-
     // Hàm tạo màu ngẫu nhiên
     const getRandomColor = () => {
         const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`; // Tạo mã hex ngẫu nhiên
         return randomColor;
     };
-
     // Tạo mảng chứa các giá trị marginLeft
     const circles: { marginLeft: number; backgroundColor: string }[] = [];
     for (let i = 0; i < processTeamMember; i++) {
@@ -148,7 +138,6 @@ const TaskDetails: React.FC = () => {
         });
     }
     const boxes = Array.from({ length: 20 }, (_, index) => index + 1); // Tạo mảng 20 phần tử
-
     // Hàm thay đổi trạng thái task
     const toggleTaskStatus = async (index: number) => {
         try {
@@ -166,10 +155,6 @@ const TaskDetails: React.FC = () => {
             console.error("❌ Lỗi khi cập nhật trạng thái task:", error);
         }
     };
-
-
-
-
     return (
         <View style={styles.container}>
             <Head
