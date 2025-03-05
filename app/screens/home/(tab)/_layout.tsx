@@ -129,19 +129,21 @@ const TabRoot = () => {
         options={{
           headerTitle: () => (
             <View style={stylesHome.containerHeader}>
-              <CustomText
-                fontFamily="InterMedium"
-                style={stylesHome.headerText1} // style tùy chỉnh từ Home.ts
-              >
-                Welcome Back!
-              </CustomText>
-              <CustomText
-                fontFamily="Montserrat"
-                style={stylesHome.headerText2} // style riêng cho dòng Fazil Laghari
-              >
-                Fazil Laghari
-              </CustomText>
-              <Pressable style={stylesHome.headerRight} onPress={() => router.push('../profile')}>
+              <View>
+                <CustomText
+                  fontFamily="InterMedium"
+                  style={stylesHome.headerText1} // style tùy chỉnh từ Home.ts
+                >
+                  Welcome Back!
+                </CustomText>
+                <CustomText
+                  fontFamily="Montserrat"
+                  style={stylesHome.headerText2} // style riêng cho dòng Fazil Laghari
+                >
+                  Fazil Laghari
+                </CustomText>
+              </View>
+              <Pressable style={stylesHome.headerRight} onPress={() => router.push('../home/profile')}>
                 <Image
                   source={require('@/Image/Ellipse 36.png')}
                 />

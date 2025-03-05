@@ -104,26 +104,27 @@ const HomeScreen: React.FC = () => {
             console.error("Error navigating to Project Details:", error);
         }
     };
-
     return (
         <View style={styles.container}>
-            <MyInputField
-                style={styles.search}
-                value={search}
-                onChangeText={setSearch}
-                placeholder='Seach tasks'
-                leftIcon={<Image source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1ab553fe-9ea6-4310-9f20-a52edc715356" }} style={{ width: 24, height: 24 }} />}
-            />
-            <View style={styles.setting}>
-                <Image
-                    source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/29d5bfb0-2b66-4e13-84c3-b9d2014ebb74" }}
-                    style={styles.settingImage}
+            <View style={styles.searchAndSetting}>
+                <MyInputField
+                    style={styles.search}
+                    value={search}
+                    onChangeText={setSearch}
+                    placeholder='Seach tasks'
+                    leftIcon={<Image source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/1ab553fe-9ea6-4310-9f20-a52edc715356" }} style={{ width: 24, height: 24 }} />}
                 />
+                <View style={styles.setting}>
+                    <Image
+                        source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/29d5bfb0-2b66-4e13-84c3-b9d2014ebb74" }}
+                        style={styles.settingImage}
+                    />
+                </View>
             </View>
-
-            <CustomText fontFamily="Inter" style={styles.title1}>Completed Tasks</CustomText>
-            <CustomText fontFamily='Inter' style={styles.title2}>See all</CustomText>
-            <CustomText fontFamily='Inter' style={styles.title4}>See all</CustomText>
+            <View style={styles.completedProject}>
+                <CustomText fontFamily="Inter" style={styles.title1}>Completed Projects</CustomText>
+                <CustomText fontFamily='Inter' style={styles.title2}>See all</CustomText>
+            </View>
             {loading ? (
                 <ActivityIndicator size="large" color="#FED36A" style={{ top: reponsive.normalizeY(120) }} />
             ) : (<ScrollView
@@ -172,7 +173,10 @@ const HomeScreen: React.FC = () => {
                 ))}
             </ScrollView>)}
             {/* Ongoing Projects */}
-            <CustomText fontFamily="Inter" style={styles.title3}>Ongoing Projects</CustomText>
+            <View style={styles.ongoingProject}>
+                <CustomText fontFamily="Inter" style={styles.title1}>Ongoing Projects</CustomText>
+                <CustomText fontFamily='Inter' style={styles.title2}>See all</CustomText>
+            </View>
             {loading ? (
                 <ActivityIndicator size="large" color="#FED36A" style={{ top: reponsive.normalizeY(360) }} />
             ) : (<ScrollView

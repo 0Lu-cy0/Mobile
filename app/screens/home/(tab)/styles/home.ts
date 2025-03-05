@@ -5,44 +5,48 @@ import responsive from "@/components/reponsive";
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#212832'
+        backgroundColor: '#212832',
+        paddingHorizontal: responsive.normalizeX(22),
     },
     containerHeader: {
         position: 'absolute',
-        width: responsive.normalizeWidth(384),
-        top: responsive.normalizeY(0),
-        left: responsive.normalizeX(8)
+        width: responsive.normalizeWidth(376),
+        top: 0,
+        left: responsive.normalizeX(5),
+        justifyContent: 'space-between',
+        flexDirection: 'row',
     },
     headerText1: {
         fontSize: 12.7,
         color: '#FED36A',
+        left: 0,
     },
     headerText2: {
         transform: [
             { scaleX: 1.31 },     // Kéo dài theo chiều ngang
-            { translateX: 39.8 }   // Dịch lại vị trí ban đầu
+            { translateX: 12.5 }   // Dịch lại vị trí ban đầu
         ],
         fontSize: 22.29,
         color: 'white',
     },
     headerRight: {
-        position: 'absolute',
         width: responsive.normalizeWidth(48),
         height: responsive.normalizeHeight(48),
-        left: responsive.normalizeX(328),
+    },
+    searchAndSetting: {
+        marginTop: responsive.normalizeY(13),
+        width: "100%",
+        height: responsive.normalizeHeight(58),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     search: {
-        left: responsive.normalizeX(22),
-        top: responsive.normalizeY(35),
         width: responsive.normalizeWidth(311),
-        height: responsive.normalizeHeight(58),
+        height: '100%'
     },
     setting: {
-        position: 'absolute',
-        left: responsive.normalizeX(349),
-        top: responsive.normalizeY(35),
         width: responsive.normalizeWidth(58),
-        height: responsive.normalizeHeight(58),
+        height: "100%",
         backgroundColor: '#FED36A',
         justifyContent: 'center',
         alignItems: 'center'
@@ -52,20 +56,25 @@ const styles = StyleSheet.create({
         height: responsive.normalizeHeight(24),
         resizeMode: 'contain',
     },
+    completedProject: {
+        marginTop: responsive.normalizeY(40),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    ongoingProject: {
+        marginTop: responsive.normalizeY(-134),
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
     title1: {
-        position: 'absolute',
-        fontSize: 20,
+        fontSize: 26,
+        lineHeight: 26,
         color: 'white',
-        top: responsive.normalizeY(127),
-        left: responsive.normalizeX(22),
     },
     title2: {
-        position: 'absolute',
-        fontSize: 16,
-        lineHeight: 26,
+        fontSize: 20,
+        lineHeight: 25,
         color: '#FED36A',
-        top: responsive.normalizeY(127),
-        left: responsive.normalizeX(356),
     },
     title3: {
         position: 'absolute',
@@ -83,18 +92,15 @@ const styles = StyleSheet.create({
         left: responsive.normalizeX(356),
     },
     scrollViewContent: {
-        top: responsive.normalizeY(120),
-        paddingLeft: responsive.normalizeX(22),
+        marginTop: responsive.normalizeY(16),
     },
     box: {
         flex: 1,
         width: responsive.normalizeWidth(183),
         height: responsive.normalizeHeight(175),
         backgroundColor: '#FED36A',
-        paddingTop: responsive.normalizeY(10),
-        paddingRight: responsive.normalizeX(10),
-        paddingBottom: responsive.normalizeY(10),
-        paddingLeft: responsive.normalizeX(10),
+        paddingHorizontal: responsive.normalizeX(10),
+        paddingVertical: responsive.normalizeY(10),
         justifyContent: 'space-between',
 
     },
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     scrollViewContentVertically: {
-        paddingHorizontal: responsive.normalizeX(22),
+        marginTop: responsive.normalizeY(16),
         paddingBottom: responsive.normalizeY(20), // Để tạo không gian dưới cùng
     },
     box1: {

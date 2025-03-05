@@ -5,7 +5,7 @@ Những lưu ý cần sửa lại :
 
 - Phần team member trên firebase nên tạo sâu hơn thay vì bây giờ chỉ có hiển thị :
 teamMember: 5
-==> teamMember: {  
+==> teamMember: [
         0: {
             name: 'Nguyễn Văn A',
             email: 'a@gmail.com',
@@ -16,7 +16,8 @@ teamMember: 5
             name: 'Nguyễn Văn A',
             email: 'a@gmail.com',
             image: 'https://firebasestorage.googleapis.com/...',
-        }   
+        }
+    ]   
 
 Nút add team member, khi ấn sẽ tạo ra 1 modal, ở đó hiển thị ra 1 flashList tất cả các tên và email của người dùng. Nó trông sẽ tương tự như ảnh "thêm nhóm zalo" mà tôi để ở trong folder Image. 
 
@@ -30,4 +31,22 @@ Tách các Flash List ra thành các component
 https://youtu.be/EMbAQnLbR1g?si=1fvItwu5wjUKRoiA
 Link animation cho phần chọn ngày
 https://youtu.be/TOWEb-px17s?si=GG436tIdTk5ULfyA --Animmation chế độ sáng, tối, chp app
+
+-Khi tạo tài khoản mới, tự động thêm 1 avatar cho người dùng, random trong các icon có sẵn trên cơ sở dữ liệu/local
+
+Register
+==> Lưu tài khoản lên authetication trên firebase + tạo 1 user trên database firebase [
+    "users": {
+    "userId1": {
+      "fullName": "Nguyễn Văn A",
+      "email": "user1@gmail.com",
+      "avatar": "https://example.com/avatar1.png"
+    },
+    "userId2": {
+      "fullName": "Trần Thị B",
+      "email": "user2@gmail.com",
+      "avatar": "https://example.com/avatar2.png"
+    }
+  }
+]💡 userId chính là uid của Firebase Authentication.
 

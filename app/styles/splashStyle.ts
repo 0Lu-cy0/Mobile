@@ -5,22 +5,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#212832",
-  },
-  letStartBox: {
-    width: responsive.normalizeWidth(376),
-    height: responsive.normalizeHeight(67),
-    paddingHorizontal: 40,
-    paddingVertical: 15,
-    position: "absolute",
-    left: responsive.normalizeX(26),
-    top: responsive.normalizeY(809),
+    paddingHorizontal: responsive.normalizeX(26),
   },
   viewImage: {
     width: responsive.normalizeWidth(369),
     height: responsive.normalizeHeight(330),
-    position: "absolute",
-    left: responsive.normalizeX(26),
-    top: responsive.normalizeY(123),
+    marginTop: responsive.normalizeY(34),
     backgroundColor: "white",
   },
   image: {
@@ -31,16 +21,19 @@ const styles = StyleSheet.create({
   },
   viewText: {
     width: responsive.normalizeWidth(275),
-    height: responsive.normalizeHeight(240),
-    justifyContent: "center",
-    alignItems: "center",
-    left: responsive.normalizeX(0),
-    top: responsive.normalizeY(505),
+    height: responsive.normalizeHeight(194),
+    marginTop: responsive.normalizeY(60),
   },
   text: {
     color: "#FFFFFF",
-    fontSize: responsive.normalizeFontSize(60),
-
+    lineHeight: 60,
+  },
+  letStartBox: {
+    width: responsive.normalizeWidth(376),
+    height: responsive.normalizeHeight(67),
+    paddingHorizontal: 40,
+    paddingVertical: 15,
+    marginTop: responsive.normalizeY(59),
   },
 });
 

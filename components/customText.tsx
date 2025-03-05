@@ -3,7 +3,7 @@ import { Text, TextProps, StyleSheet, TextStyle } from 'react-native';
 import { useFonts } from 'expo-font';
 
 interface CustomTextProps extends TextProps {
-    fontFamily?: 'Inter' | 'Montserrat' | 'InterMedium' | 'InterReguler' | 'InterSemiBold'; // Chọn font chữ
+    fontFamily?: 'Inter' | 'Montserrat' | 'InterMedium' | 'InterReguler' | 'InterSemiBold' | 'InterThin'; // Chọn font chữ
     fontSize?: number; // Kích thước chữ tùy chỉnh
     style?: TextStyle | TextStyle[]; // Thêm các style khác
 }
@@ -22,6 +22,7 @@ const CustomText = ({
         'InterMedium': require('../assets/fonts/Inter_28pt-Medium.ttf'),
         'Montserrat': require('../assets/fonts/Montserrat-SemiBold.ttf'),
         'InterSemiBold': require('../assets/fonts/Inter_28pt-SemiBold.ttf'),
+        'InterThin': require('../assets/fonts/Inter_28pt-Thin.ttf'),
     });
 
     if (!fontLoaded) {

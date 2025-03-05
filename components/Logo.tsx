@@ -10,17 +10,16 @@ export default function ResizableLogoBox() {
     const getBoxStyle = () => {
         if (route.name === "index") {
             return {
-                width: responsive.normalizeWidth(84.06),
+                width: responsive.normalizeWidth(94.06),
                 height: responsive.normalizeHeight(61.5),
-                left: responsive.normalizeX(22),
-                top: responsive.normalizeY(26),
+                marginTop: responsive.normalizeY(26),
             };
         } else if (route.name === "screens/login" || route.name === "screens/signup") {
             return {
                 width: responsive.normalizeWidth(139),
                 height: responsive.normalizeHeight(91.92),
-                left: responsive.normalizeX(146),
-                top: responsive.normalizeY(37.5),
+                left: responsive.normalizeX(121),
+                marginTop: responsive.normalizeY(37.5),
             };
         }
         return {};
@@ -56,7 +55,7 @@ export default function ResizableLogoBox() {
                     textAlign: "center",
                     fontSize: fontSize, // Responsive fontSize
                     fontFamily: 'Montserrat', // Font chung cho cả chữ
-                    transform: [{ scaleX: 1.4 }, { translateX: 0 }],
+                    transform: [{ scaleX: 1.63 }, { translateX: 0 }],
                 }}
             >
                 <CustomText fontSize={textFontSize} >
@@ -71,7 +70,6 @@ export default function ResizableLogoBox() {
 
 const styles = StyleSheet.create({
     box: {
-        position: "absolute", // Hộp nằm tuyệt đối
         justifyContent: "center",
         alignItems: "center",
     }

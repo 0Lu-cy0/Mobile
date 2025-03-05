@@ -8,6 +8,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import CustomText from '@/components/customText';
 import MyInputField from '@/components/inputButton';
 import { registerWithEmail, loginWithGoogle } from "@/services/authService";
+import DividerWithText from '@/components/DividerWithText';
 
 const Signup = () => {
     const router = useRouter();
@@ -66,30 +67,26 @@ const Signup = () => {
     };
 
     return (
-        <SafeAreaView style={styleSignUp.container}>
+        <View style={styleSignUp.container}>
             <ResizableLogoBox />
-
             <CustomText style={styleSignUp.text1}>Create your account</CustomText>
-
             <CustomText style={styleSignUp.text2}>Full Name</CustomText>
             <MyInputField
                 value={fullName}
                 onChangeText={setFullName}
                 placeholder='Enter your full name'
                 leftIcon={<Image source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3caff157-2efa-4052-95fd-f178e49fd5c9" }} style={{ width: 24, height: 24 }} />}
-                style={styleSignUp.inputEmail}
+                style={styleSignUp.inputEmailAndPassword}
             />
-
             <CustomText style={styleSignUp.text3}>Email Address</CustomText>
             <MyInputField
                 value={email}
                 onChangeText={setEmail}
                 placeholder='Enter your email'
                 leftIcon={<Image source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/01c3956b-50b9-4793-819f-54b0e1af8a2a" }} style={{ width: 24, height: 24 }} />}
-                style={styleSignUp.inputPassword}
+                style={styleSignUp.inputEmailAndPassword}
             />
-
-            <CustomText style={styleSignUp.text6}>Password</CustomText>
+            <CustomText style={styleSignUp.text3}>Password</CustomText>
             <MyInputField
                 value={password}
                 onChangeText={setPassword}
@@ -108,9 +105,8 @@ const Signup = () => {
                     </TouchableOpacity>
                 }
                 secureTextEntry={!showPassword}
-                style={styleSignUp.signUpPassword}
+                style={styleSignUp.inputEmailAndPassword}
             />
-
             <View style={styleSignUp.termsContainer}>
                 <TouchableOpacity onPress={() => setIsChecked(!isChecked)}>
                     <Image
@@ -123,14 +119,13 @@ const Signup = () => {
                     />
                 </TouchableOpacity>
                 <View style={styleSignUp.textTermsContainer}>
-                    <CustomText style={[styleSignUp.text7]}>
+                    <CustomText style={styleSignUp.text7}>
                         I have read & agreed to DayTask{" "}
                         <Text style={{ color: '#FED36A', lineHeight: 17 }}>Privacy Policy,</Text>{"\n"}
                         <Text style={{ color: '#FED36A' }}>Terms & Condition</Text>
                     </CustomText>
                 </View>
             </View>
-
             <MyButton
                 title={
                     <CustomText fontFamily="Inter" fontSize={18}>
@@ -140,19 +135,18 @@ const Signup = () => {
                 onPress={onRegister}
                 disabled={isRegisterDisabled}
                 style={[
-                    styleSignUp.signnupButton,
+                    styleSignUp.signUpButton,
                     ...(isRegisterDisabled ? [{ opacity: 0.5 }] : [])
                 ]}
             />
-
-            <View style={styleSignUp.line1Sign} />
-            <CustomText
-                fontFamily='InterMedium'
-                fontSize={18}
-                style={styleSignUp.text8}
-            >Or continue with</CustomText>
-            <View style={styleSignUp.line2Sign} />
-
+            <DividerWithText
+                containerStyle={styleSignUp.lineSignIn_Up}
+                text={<CustomText
+                    fontFamily='InterMedium'
+                    fontSize={18}
+                    style={{ color: "#8CAAB9" }}
+                >Or continue with</CustomText>}>
+            </DividerWithText>
             <MyButton
                 backgroundColor='transparent'
                 title={
@@ -167,16 +161,15 @@ const Signup = () => {
                     </View>
                 }
                 onPress={onGoogleRegister}
-                style={styleSignUp.googleButtonSign}
+                style={styleSignUp.googleButton}
             />
-
-            <View style={styleSignUp.logInPageTransition} >
+            <View style={styleSignUp.PageTransition} >
                 <CustomText fontFamily='InterMedium' fontSize={16} style={{ color: '#8CAAB9' }}>Already have an account? </CustomText>
                 <TouchableOpacity onPress={onLogin}>
                     <CustomText fontFamily='Inter' fontSize={18} style={{ color: '#FED36A' }}>Log In</CustomText>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </View>
     );
 }
 

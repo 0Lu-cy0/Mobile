@@ -9,7 +9,9 @@ const completedProjects = [
     {
         id: 0,
         title: 'Real Estate\nWebsite\nDesign',
-        teamMember: 5,
+        teamMember: [
+            { name: 'John Doe', email: 'aaa@gmail.com', image: '' },
+        ],
         dueDate: '21 March',
         projectDetails: 'This project involves developing a new app for task management.',
         allTasks: [

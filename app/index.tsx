@@ -16,16 +16,15 @@ export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
       <ResizableLogoBox />
-
       <View style={styles.viewImage}>
         <Image source={require('@/assets/images/pana.png')} style={styles.image} />
       </View>
       <View style={styles.viewText}>
-        <CustomText style={styles.text}>
+        <CustomText fontFamily="InterMedium" fontSize={60} style={styles.text}>
           Manage {"\n"}
           your {"\n"}
           Task with {"\n"}
-          <CustomText style={{ ...styles.text, color: '#FED36A' }}>DayTask</CustomText>
+          <CustomText fontFamily="InterMedium" fontSize={60} style={{ ...styles.text, color: '#FED36A' }}>DayTask</CustomText>
         </CustomText>
       </View>
       <MyButton

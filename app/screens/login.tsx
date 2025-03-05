@@ -7,6 +7,7 @@ import MyButton from '@/components/myButton';
 import MyInputField from '@/components/inputButton';
 import stylesLogin from '../styles/login_signupStyle';
 import { loginWithEmail, loginWithGoogle } from '@/services/authService';
+import DividerWithText from '@/components/DividerWithText';
 
 const Login = () => {
     const router = useRouter();
@@ -58,7 +59,7 @@ const Login = () => {
     };
 
     return (
-        <SafeAreaView style={stylesLogin.container}>
+        <View style={stylesLogin.container}>
             <ResizableLogoBox />
             <CustomText style={stylesLogin.text1}>Welcome Back!</CustomText>
             <CustomText style={stylesLogin.text2}>Email Address</CustomText>
@@ -67,9 +68,8 @@ const Login = () => {
                 onChangeText={setEmail}
                 placeholder='Enter your email'
                 leftIcon={<Image source={{ uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/01c3956b-50b9-4793-819f-54b0e1af8a2a" }} style={{ width: 24, height: 24 }} />}
-                style={stylesLogin.inputEmail}
+                style={stylesLogin.inputEmailAndPassword}
             />
-
             <CustomText style={stylesLogin.text3}>Password</CustomText>
             <MyInputField
                 value={password}
@@ -89,13 +89,11 @@ const Login = () => {
                     </TouchableOpacity>
                 }
                 secureTextEntry={!showPassword}
-                style={stylesLogin.inputPassword}
+                style={stylesLogin.inputEmailAndPassword}
             />
-
             <TouchableOpacity onPress={() => Alert.alert('Forgot Password', 'Reset password feature coming soon!')}>
                 <CustomText style={stylesLogin.text4}>Forgot Password?</CustomText>
             </TouchableOpacity>
-
             <MyButton
                 title={<CustomText fontFamily="Inter" fontSize={18}>{isLoading ? 'Logging in...' : 'Login'}</CustomText>}
                 onPress={onLogin}
@@ -105,11 +103,14 @@ const Login = () => {
                     ...(isLoginDisabled ? [{ opacity: 0.5 }] : [])
                 ]}
             />
-
-            <View style={stylesLogin.line1} />
-            <CustomText fontFamily='InterMedium' fontSize={18} style={stylesLogin.text5}>Or continue with</CustomText>
-            <View style={stylesLogin.line2} />
-
+            <DividerWithText
+                containerStyle={stylesLogin.lineSignIn_Up}
+                text={<CustomText
+                    fontFamily='InterMedium'
+                    fontSize={18}
+                    style={{ color: "#8CAAB9" }}
+                >Or continue with</CustomText>}>
+            </DividerWithText>
             <MyButton
                 backgroundColor='transparent'
                 title={
@@ -127,13 +128,13 @@ const Login = () => {
                 style={stylesLogin.googleButton}
             />
 
-            <View style={stylesLogin.signUpPageTransition}>
+            <View style={stylesLogin.PageTransition}>
                 <CustomText fontFamily='InterMedium' fontSize={16} style={{ color: '#8CAAB9' }}>Don't have an account? </CustomText>
                 <TouchableOpacity onPress={onSignUp}>
                     <CustomText fontFamily='Inter' fontSize={18} style={{ color: '#FED36A' }}>Sign Up</CustomText>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </View>
     );
 };
 
